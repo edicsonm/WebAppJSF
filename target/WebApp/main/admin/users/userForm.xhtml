@@ -1,0 +1,91 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:jsf="http://xmlns.jcp.org/jsf"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<ui:composition template="/private.xhtml">
+	<ui:define name="body">
+		
+		<div class="row">
+			<div class="col-md-3" /> 
+			<div class="col-md-6" >
+				<!-- <h:form styleClass="form-horizontal"> -->
+				<h:form id="userForm">
+
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title">#{bundle['label.update']}</h3>
+						</div>
+						<div class="panel-body">
+							<div class="form-group">
+								<h:messages styleClass="alert alert-danger" p:role="alert" />
+							</div>
+							<div class="form-group">
+								<h:outputLabel for="sSO" value="#{bundle['label.SSO']}"/>
+								<h:inputText value="#{userBean.sSO}" id="sSO" label="#{bundle['label.SSO']}" styleClass="form-control" validator="#{userBean.validateUserName}"/>
+							</div>
+							
+							<div class="form-group">
+								<h:outputLabel for="firstName" value="#{bundle['label.firstName']}"/>
+								<h:inputText value="#{userBean.firstName}" id="firstName" styleClass="form-control"/>
+							</div>
+							
+							<div class="form-group">
+								<h:commandButton id="submitLogin" styleClass="btn btn-default" value="#{bundle['label.save']}" action="#{userBean.navigate}" />
+								<h:outputLink id="cancel"  styleClass="btn btn-danger" onclick="history.back(); return false;">#{bundle['label.cancel']}</h:outputLink>
+							</div>
+						</div>
+					</div>
+					
+				</h:form>
+			</div> 
+			<div class="col-md-3" /> 
+		</div>
+	</ui:define>
+</ui:composition>
+<!-- 
+<h:form p:name="userForm" novalidate="novalidate">
+	<div class="form-horizontal">
+		<div class="modal-header">
+			<h3 class="modal-title">{{title}}</h3>
+		</div>
+		<div class="modal-body">
+			<div class="form-group">
+				<h:outputLabel for="sSO" styleClass="col-xs-3 col-sm-12 col-md-2 control-label" value="#{bundle['label.SSO']}"/>
+				<label for="sSO" class="col-xs-3 col-sm-12 col-md-2 control-label">#{bundle['label.SSO']}</label>
+				<div class="col-xs-9 col-sm-12 col-md-8">
+					<h:inputText p:id="sSO" p:name="sSO" p:ng-model="sso" styleClass="form-control" p:required="true" />
+					<input type="text" name="sso" class="form-control" ng-model="sso" 
+					placeholder="#{bundle['label.SSO']}" ng-minlength="2" ng-maxlength="15" required="required" />
+				</div>
+				<div class="form-group" ng-class="{'has-error' : userForm.sso.$touched && userForm.sso.$invalid}">
+					<label for="sso" class="col-xs-3 col-sm-12 col-md-2 control-label">#{bundle['label.SSO']}</label>
+					<div class="col-xs-9 col-sm-12 col-md-8">
+						<input type="text" name="sso" class="form-control" ng-model="sso" placeholder="#{bundle['label.SSO']}" ng-minlength="2" ng-maxlength="15" required />
+						
+						<div class="help-block" ng-messages="userForm.sso.$error" ng-if="userForm.sso.$touched">
+						    <p ng-message="minlength">Your sso is too short.</p>
+						    <p ng-message="maxlength">Your sso is too long.</p>
+						    <p ng-message="required">Your sso is required.</p>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+			<div class="form-group">
+				<h:outputLabel for="firstName" styleClass="col-xs-3 col-sm-12 col-md-2 control-label" value="#{bundle['label.firstName']}"/>
+				<div class="col-xs-9 col-sm-12 col-md-8">
+					<h:inputText p:id="firstName" p:name="firstName" p:ng-model="firstName" styleClass="form-control" p:required="true" required="true" maxlength="30" />
+				</div>
+			</div>
+		</div>
+		<div class="modal-footer">
+			<button class="btn btn-primary" ng-disabled="userForm.$invalid" type="button" ng-click="save()">Save</button>
+			<button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+			<h:commandButton action="#{user.validar()}" value="enviar" />
+		</div>
+	</div>
+</h:form> -->
+</html>

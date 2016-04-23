@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: WebApp
+Bundle-SymbolicName: WebApp
+Bundle-Version: 1.0.0.qualifier
+Export-Package: au.com.edimoto.bean,
+ au.com.edimoto.ejb,
+ au.com.edimoto.entity
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8

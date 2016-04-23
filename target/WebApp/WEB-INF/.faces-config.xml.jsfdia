@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PROCESS model-entity="JSFProcess">
+ <PROCESS-ITEM NAME="rules:#main#main.xhtml" PATH="/main/main.xhtml"
+  SHAPE="32,17,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#main#main.xhtml:0" NAME="item"
+   PATH="/main/main.xhtml" SHAPE="504,150,47,15" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="index::#index.xhtml" NAME="output"
+    PATH="/index.xhtml" SHAPE="-1,16" TARGET="rules:#index.xhtml"
+    TITLE="index" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#index.xhtml" PATH="/index.xhtml"
+  SHAPE="240,33,0,0" model-entity="JSFProcessGroup" persistent="true"/>
+ <PROCESS-ITEM NAME="rules:#main#admin#users#userForm.xhtml"
+  PATH="/main/admin/users/userForm.xhtml" SHAPE="248,160,50,41" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#main#admin#users#userForm.xhtml:0"
+   NAME="item" PATH="/main/admin/users/userForm.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="cancel::#main#admin#users#users.xhtml"
+    NAME="output" PATH="/main/admin/users/users.xhtml"
+    TARGET="rules:#main#admin#users#users.xhtml" TITLE="cancel" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#main#admin#users#users.xhtml"
+  PATH="/main/admin/users/users.xhtml" SHAPE="40,144,50,41" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#main#admin#users#users.xhtml:0" NAME="item"
+   PATH="/main/admin/users/users.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="update::#main#admin#users#userForm.xhtml"
+    NAME="output" PATH="/main/admin/users/userForm.xhtml" SHAPE="-1,16"
+    TARGET="rules:#main#admin#users#userForm.xhtml" TITLE="update" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+</PROCESS>

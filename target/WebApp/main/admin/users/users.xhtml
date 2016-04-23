@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<ui:composition template="/private.xhtml">
+	<ui:define name="body">
+			<div class="row">
+				<div class="col-md-3" /> 
+				<div class="col-md-6">
+					
+					<h:dataTable value="#{userBean.listUsers}" var="user" binding="#{table}" styleClass="table table-hover" >
+						<h:column>
+							<h:outputText value="#{table.rowIndex + 1}" />
+						</h:column>
+						<h:column>
+							<f:facet name="header">
+								<h:outputText value="#{bundle['label.SSO']}" />
+		                    </f:facet>
+							<h:outputText value="#{user.sSO}"/>
+							<!-- <h:commandLink actionListener="userBean.chooseUser" value="#{user.sSO}" /> -->
+						</h:column>
+						<h:column>
+							<f:facet name="header">
+		                        <h:outputText value="#{bundle['label.email']}" />
+		                    </f:facet>
+							<h:outputText value="#{user.email}"/>
+						</h:column>
+						
+						<h:column>
+							<f:facet name="header">
+		                        <h:outputText value="#{bundle['label.firstName']}" />
+		                    </f:facet>
+							<h:outputText value="#{user.firstName}"/>
+						</h:column>
+						<h:column>
+							<f:facet name="header">
+		                        <h:outputText value="#{bundle['label.lastName']}" />
+		                    </f:facet>
+							<h:outputText value="#{user.lastName}"/>
+						</h:column>
+						<h:column>
+							<f:facet name="header">
+		                        <h:outputText value="#{bundle['label.state']}" />
+		                    </f:facet>
+							<h:outputText value="#{user.state}"/>
+						</h:column>
+						
+						<h:column>
+							<f:facet name="header">
+		                        <h:outputText value="#{bundle['label.action']}" />
+		                    </f:facet>
+		                    <h:form>
+		                    	<h:commandButton type="submit" action="#{userBean.update(user)}" styleClass="btn btn-warning" value="#{bundle['label.update']}"/>
+		                    	<h:commandButton type="button" styleClass="btn btn-danger" value="#{bundle['label.delete']}"/>
+		                    </h:form>
+		                    
+		                    <!-- <button type="button" class="btn btn-danger">#{bundle['label.delete']}</button>  -->
+		                    
+							<!-- <h:commandButton type="button" styleClass="btn btn-warning" value="#{bundle['label.update']}"/>
+							<h:commandButton type="button" styleClass="btn btn-danger" value="#{bundle['label.delete']}"/> -->
+							<!-- <button type="button" ng-click="edit('#{bundle['label.update']}', '#{user.sSO}', '#{user.firstName}')" class="btn btn-warning">#{bundle['label.update']}</button>
+							<button type="button" class="btn btn-danger">#{bundle['label.delete']}</button> -->
+						</h:column>
+						
+						
+					</h:dataTable>
+					
+					<h:dataTable var="user">
+						<h:column>
+							<h:outputText value="#{user.listUsers}"/>
+						</h:column>
+					</h:dataTable>
+					
+				</div>
+				<div class="col-md-3" />
+			</div>
+		<!-- <h:outputScript library="js" name="/users/user.js" /> -->
+	</ui:define>
+</ui:composition>
+
+</html>

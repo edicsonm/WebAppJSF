@@ -1,0 +1,19 @@
+
+.bs-docs-footer {
+    background-color: #2a2730;
+    color: #99979c;
+    margin-top: 100px;
+    padding-bottom: 50px;
+    padding-top: 50px;
+    text-align: center;
+}
+
+.bs-docs-footer {
+    text-align: left;
+}
+
+.navbar-brand {
+    padding: 3px 15px;
+}
+
+

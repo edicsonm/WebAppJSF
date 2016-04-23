@@ -1,0 +1,131 @@
+<!-- <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> -->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+<h:head>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<h:outputStylesheet library="css" name="bootstrap.css" />
+	<h:outputStylesheet library="css" name="cssProject.css" />
+	<title><ui:insert name="pageTitle">Page Title</ui:insert></title>
+</h:head>
+
+<h:body>
+	<!-- <ui:insert name="header">Header Section</ui:insert> -->
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<!-- <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+					<span class="sr-only">Toggle navigation</span> 
+					<span class="icon-bar"></span> 
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button> -->
+				<a class="navbar-brand" href="#{request.contextPath}">
+					<h:graphicImage value="#{resource['images:Bull_Edimoto.png']}" width="45" height="45"  />
+					<!-- #{bundle['site.name']} -->
+				</a>
+				
+				<!-- logoEdimoto.png -->
+			</div> 
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		    	<ul class="nav navbar-nav">
+		    		<li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
+       				<li><a href="#">Link</a></li>
+       				<li class="dropdown">
+			          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+			          <ul class="dropdown-menu">
+			            <li><a href="#">Action</a></li>
+			            <li><a href="#">Another action</a></li>
+			            <li><a href="#">Something else here</a></li>
+			            <li role="separator" class="divider"></li>
+			            <li><a href="#">Separated link</a></li>
+			            <li role="separator" class="divider"></li>
+			            <li><a href="#">One more separated link</a></li>
+			          </ul>
+			        </li>
+		    	</ul>
+		    	
+		    	<div class="navbar-right">
+			    	<form class="navbar-form navbar-left" role="search">
+						<div class="form-group">
+							<input type="text" class="form-control" placeholder="#{bundle['placeholder.search']}"/>
+						</div>
+						<button type="submit" class="btn btn-default">#{bundle.search}</button>
+					</form>
+					<h:form class="navbar-form navbar-right" role="login" >
+						<h:outputLink id="irLogin" styleClass="btn btn-default" rendered="#{!main.userAuthenticated}" value="#{request.contextPath}/main/main.xhtml" >#{bundle.login}</h:outputLink>
+						<h:outputLink id="irMain" styleClass="btn btn-default" rendered="#{main.userAuthenticated}" value="#{request.contextPath}/main/main.xhtml" >#{bundle.goMain}</h:outputLink>
+					</h:form>
+		    	</div>
+				
+		    </div><!-- /.navbar-collapse -->
+		</div><!-- /.container-fluid -->
+		
+	</nav>
+	
+	<!-- <div>
+		<div id="left">
+			<div class="left">
+				<ui:insert name="left">Left Section</ui:insert>
+			</div>
+		</div> 
+	</div>-->
+
+	<div id="content" class="container">
+		<ui:insert name="content">Main Section</ui:insert>
+	</div>
+	
+
+	<!-- <div id="footer" class="footer"> -->
+		<!-- <ui:insert name="footer">Footer Section</ui:insert> -->
+	
+	
+<!-- 	<footer class="footer">
+      <div class="container">
+      	<ul class="bs-docs-footer-links">
+			<li><a href="https://github.com/twbs/bootstrap">GitHub</a></li>
+			<li><a href="https://twitter.com/getbootstrap">Twitter</a></li>
+			<li><a href="../getting-started/#examples">Examples</a></li>
+			<li><a href="../about/">About</a></li>
+		</ul>
+        <p class="text-muted">Place sticky footer content here.</p>
+      </div>
+    </footer> -->
+	
+	<footer role="contentinfo" class="bs-docs-footer">
+		<div class="container-fluid">
+			<ul class="bs-docs-footer-links">
+				<li><a href="https://github.com/twbs/bootstrap">GitHub</a></li>
+				<li><a href="https://twitter.com/getbootstrap">Twitter</a></li>
+				<li><a href="../getting-started/#examples">Examples</a></li>
+				<li><a href="../about/">About</a></li>
+			</ul>
+			<p>
+				Designed and built with all the love in the world by <a
+					target="_blank" href="https://twitter.com/mdo">@mdo</a> and <a
+					target="_blank" href="https://twitter.com/fat">@fat</a>.
+				Maintained by the <a href="https://github.com/orgs/twbs/people">core
+					team</a> with the help of <a
+					href="https://github.com/twbs/bootstrap/graphs/contributors">our
+					contributors</a>.
+			</p>
+			<p>
+				Code licensed <a target="_blank"
+					href="https://github.com/twbs/bootstrap/blob/master/LICENSE"
+					rel="license">MIT</a>, docs <a target="_blank"
+					href="https://creativecommons.org/licenses/by/3.0/" rel="license">CC
+					BY 3.0</a>.
+			</p>
+		</div>
+	</footer>
+
+	<!-- </div> -->
+
+	<h:outputScript library="js" name="jquery.js" />
+	<h:outputScript library="js" name="bootstrap.js" />
+	
+</h:body>
+
+</html>

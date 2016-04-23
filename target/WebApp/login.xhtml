@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      
+      xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
+      
+      xmlns:en="http://java.sun.com/jsf/composite/emcomp">
+
+	<ui:composition template="/public.xhtml">
+		<ui:define name="content">
+			<div class="row">
+				<div class="col-md-4"/>
+				<div class="col-md-4">
+				<!-- <h:form>
+					<h:outputLabel for="texto" id="textoLabel" value="#{cc.attrs.userNameLabel}" />
+					<h:inputText id="texto" p:name="texto" required="true" requiredMessage="asdasd sad sd" maxlength="3" styleClass="form-control"/>
+					<h:message styleClass="error-message" for="texto"/>
+					<h:commandButton id="submitLogin" 
+				styleClass="pull-right btn btn-default" 
+				value="#{bundle.login}" />
+				</h:form> -->
+				<h:form id="loginForm" onsubmit="document.getElementById('loginForm').action='j_security_check';">
+					<en:loginComponent panelLoginTitle="#{bundle['title.panelLoginTitle']}"
+						userNameId="j_username"
+						passwordId="j_password"	
+						userNameLabel="#{bundle['label.userName']}" 
+						passwordLabel="#{bundle['label.password']}" 
+						
+						valuePassword="esaasdas"
+						
+						loginButtonLabel="#{bundle.login}"/>
+				</h:form>
+				</div>
+				<div class="col-md-4"/>
+			</div>
+			
+		</ui:define>
+	</ui:composition>
+</html>
